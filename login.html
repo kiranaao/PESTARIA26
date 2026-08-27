@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PESTARIA — Backstage Access</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,700;0,800;1,600&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Archivo', sans-serif; }
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .font-serif-italic { font-family: 'DM Serif Display', serif; }
+
+  /* Hard, offset brutalist shadow blocks */
+  .hard-shadow {
+    box-shadow: 10px 10px 0px 0px #111111;
+  }
+  .hard-shadow-sm {
+    box-shadow: 6px 6px 0px 0px #111111;
+  }
+  .hard-shadow-btn {
+    box-shadow: 4px 4px 0px 0px #111111;
+  }
+  .hard-shadow-btn:active {
+    box-shadow: 1px 1px 0px 0px #111111;
+    transform: translate(3px, 3px);
+  }
+
+  .badge-spin {
+    animation: spin-slow 14s linear infinite;
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-spin { animation: none; }
+  }
+</style>
+</head>
+<body class="bg-[#F1ECE0] text-[#111111] min-h-screen flex flex-col">
+
+  <!-- Top bar -->
+  <header class="w-full bg-[#DE3226] text-white border-b-4 border-black">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-3">
+      <div class="flex items-center gap-2">
+        <span class="text-white text-sm">★</span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-widest">BACKSTAGE ACCESS</span>
+        <span class="hidden sm:inline text-[#F3C321] italic text-base ml-1" style="font-family:'DM Serif Display', serif;">PESTARIA</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#F3C321] inline-block"></span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-widest">ARCHIVE OPEN</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full">
+    <div class="max-w-7xl mx-auto px-5 py-12 sm:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <!-- LEFT: Login column -->
+        <section>
+          <h1 class="font-display uppercase leading-[0.9] text-[#1B2A6B] text-6xl sm:text-[80px] mb-6">
+            ACCESS THE<br />ARCHIVE
+          </h1>
+
+          <div class="flex items-center gap-3 mb-8">
+            <span class="w-3 h-3 bg-[#DE3226] inline-block"></span>
+            <p class="text-xs sm:text-sm font-extrabold tracking-widest">PESTA RIA / OFFICIAL LOGIN ACCESS</p>
+          </div>
+
+          <!-- Login card -->
+          <form action="#" method="post" class="bg-white border-[3px] border-black hard-shadow p-6 sm:p-10 max-w-lg">
+            <label for="username" class="block text-xs font-extrabold tracking-widest mb-2">USERNAME / EMAIL</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              placeholder="Input your email"
+              class="w-full bg-[#F1ECE0] border-2 border-black px-4 py-3 mb-5 text-sm placeholder-[#111111]/50 focus:outline-none focus:ring-2 focus:ring-[#1B2A6B]"
+            />
+
+            <label for="password" class="block text-xs font-extrabold tracking-widest mb-2">PASSWORD</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Input your password"
+              class="w-full bg-[#F1ECE0] border-2 border-black px-4 py-3 mb-8 text-sm placeholder-[#111111]/50 focus:outline-none focus:ring-2 focus:ring-[#1B2A6B]"
+            />
+
+            <button
+              type="submit"
+              class="w-full bg-[#DE3226] text-white border-2 border-black hard-shadow-btn font-display uppercase tracking-wider text-sm py-3.5 mb-5 transition-transform"
+            >
+              ENTER ARCHIVE
+            </button>
+
+            <!-- Diubah menjadi tag <a> menuju index.html -->
+            <a
+              href="index.html"
+              class="w-full bg-[#F3C321] text-[#111111] border-2 border-black hard-shadow-btn font-display uppercase tracking-wider text-sm py-3.5 flex items-center justify-center gap-2 transition-transform"
+            >
+              <span aria-hidden="true" class="text-lg -mt-1">☆</span> ENTER AS GUEST
+            </a>
+
+            <p class="text-[11px] text-[#111111]/70 mt-5">Guest access provides limited event content.</p>
+          </form>
+
+          <a
+            href="index.html"
+            class="inline-flex items-center gap-2 mt-12 bg-white border-2 border-black hard-shadow-btn px-5 py-3 text-xs font-display uppercase tracking-widest transition-transform"
+          >
+            ← RETURN TO EVENT
+          </a>
+        </section>
+
+        <!-- RIGHT: Archive image column -->
+        <section class="lg:pl-6">
+          <div class="relative">
+            <!-- Image Frame -->
+            <div class="border-[3px] border-black hard-shadow bg-white">
+              <!-- Source foto diubah ke danu.jpg -->
+              <img
+                src="danu.jpg"
+                alt="Danu Iskandar backstage portrait, Pesta Ria Live 2026"
+                class="w-full h-[450px] sm:h-[550px] object-cover border-b-2 border-black"
+              />
+            </div>
+
+            <!-- Rotating ARCHIVE badge -->
+            <div class="absolute -top-6 -right-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#F3C321] border-2 border-dashed border-black flex items-center justify-center badge-spin z-10">
+              <span class="font-display text-[10px] sm:text-xs tracking-widest text-center leading-tight">ARCHIVE</span>
+            </div>
+
+            <!-- Overlapping Name Tag (Persis Mockup) -->
+            <div class="absolute -bottom-5 left-6 bg-white border-[3px] border-black hard-shadow-sm px-4 py-2 rotate-[-2deg] z-20">
+              <p class="text-[10px] sm:text-xs font-extrabold tracking-widest text-[#1B2A6B] mb-0.5">
+                PESTA RIA / LIVE 2026
+              </p>
+              <p class="font-display text-[#111111] text-2xl sm:text-3xl uppercase">
+                DANU ISKANDAR
+              </p>
+            </div>
+          </div>
+
+        <!-- Info box below image -->
+          <div class="border-[3px] border-black bg-white hard-shadow p-6 mt-12 w-full">
+            <p class="text-[10px] font-extrabold tracking-widest text-[#DE3226] mb-2 uppercase">THE ARCHIVE</p>
+            <h2 class="font-display text-2xl sm:text-3xl text-[#111111] uppercase mb-2">Backstage Access</h2>
+            <!-- Warna teks diubah ke biru navy seperti desain -->
+            <p class="font-serif-italic italic text-[#1B2A6B] text-lg">
+              Unlock setlists, rehearsal footage, and limited-run collectibles.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

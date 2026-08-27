@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PESTARIA — Choose Your Pass</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Import Google Fonts for exact match -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F3EEE3',
+          brand: {
+            red: '#D6291E',
+            yellow: '#F2C230',
+            navy: '#152B5C',
+            ink: '#1A1A1A',
+          }
+        },
+        fontFamily: {
+          display: ['"Archivo Black"', 'sans-serif'],
+          body: ['"Space Grotesk"', 'sans-serif'],
+          script: ['"Playfair Display"', 'serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #F3EEE3; }
+  
+  /* Animasi Marquee untuk Bar Atas */
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 18s linear infinite;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .barcode {
+    background: repeating-linear-gradient(90deg, currentColor 0px, currentColor 2px, transparent 2px, transparent 4px, currentColor 4px, currentColor 5px, transparent 5px, transparent 8px);
+    height: 28px;
+  }
+</style>
+</head>
+<body class="font-body text-brand-ink">
+
+  <!-- TOP BAR (Marquee Bergerak) -->
+  <div class="bg-brand-red text-cream text-[10px] sm:text-xs font-bold uppercase tracking-widest overflow-hidden whitespace-nowrap border-b-2 border-black relative z-20">
+    <div class="marquee-track py-2.5">
+      <span class="mx-6">★ TICKET BOOKING</span>
+      <span class="mx-6 text-brand-yellow font-script italic lowercase text-base tracking-normal">pestaria</span>
+      <span class="mx-6">★ GET YOUR SEAT</span>
+      <span class="mx-6 text-brand-yellow">★ LIMITED PASSES</span>
+      <!-- Duplikat untuk seamless loop -->
+      <span class="mx-6">★ TICKET BOOKING</span>
+      <span class="mx-6 text-brand-yellow font-script italic lowercase text-base tracking-normal">pestaria</span>
+      <span class="mx-6">★ GET YOUR SEAT</span>
+      <span class="mx-6 text-brand-yellow">★ LIMITED PASSES</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-8 pt-16 pb-12 text-center">
+    <div class="flex items-center justify-center gap-1 mb-6">
+      <span class="bg-brand-red text-cream text-[10px] font-bold uppercase tracking-wider px-3 py-1 border-2 border-black -rotate-2">Tickets Now Limited!</span>
+      <span class="bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1 border-2 border-black rotate-3">June '26</span>
+    </div>
+    <h1 class="font-display font-black text-5xl sm:text-7xl text-brand-navy uppercase leading-none tracking-tight">Choose Your Pass</h1>
+    <p class="mt-4 font-script italic text-brand-red text-lg sm:text-xl">One night. Three ways to experience the icon.</p>
+  </div>
+
+  <!-- PRICING CARDS -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-stretch">
+
+    <!-- GENERAL PASS -->
+    <div class="relative bg-brand-yellow border-4 border-black shadow-[6px_6px_0_0_#000] flex flex-col h-full">
+      <div class="p-6 pb-5">
+        <div class="flex justify-between items-start text-[10px] font-bold uppercase tracking-wide">
+          <span>No. PR-001</span>
+          <span>General Admission</span>
+        </div>
+        <h2 class="font-display font-black text-3xl uppercase mt-2">General Pass</h2>
+        <p class="font-display font-black text-xl mt-1 text-brand-navy">Rp 750.000</p>
+      </div>
+
+      <div class="border-t-2 border-dashed border-black relative">
+        <div class="absolute w-6 h-6 bg-cream border-4 border-black rounded-full -top-[11px] -left-[14px]"></div>
+        <div class="absolute w-6 h-6 bg-cream border-4 border-black rounded-full -top-[11px] -right-[14px]"></div>
+      </div>
+
+      <div class="p-6 flex flex-col flex-grow">
+        <p class="text-[10px] font-bold uppercase tracking-wide mb-3">Benefits Included:</p>
+        <ul class="text-xs space-y-2 mb-8 font-medium">
+          <li class="flex gap-2 items-start"><span>★</span><span>Main concert area access</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>Official digital ticket</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>Access to merchandise booth</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>Festival wristband</span></li>
+        </ul>
+
+        <div class="mt-auto">
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[10px] font-bold uppercase tracking-wide">Quantity</p>
+            <div class="flex items-center border-2 border-black bg-cream">
+              <button onclick="changeQty('general', -1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-black hover:text-cream transition">-</button>
+              <span id="qty-general" class="w-10 h-8 flex items-center justify-center font-bold text-sm border-x-2 border-black">1</span>
+              <button onclick="changeQty('general', 1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-black hover:text-cream transition">+</button>
+            </div>
+          </div>
+          <button onclick="selectPass('General Pass', 750000)" class="w-full bg-brand-red text-cream font-display font-black uppercase py-3 border-2 border-black hover:bg-black transition text-sm tracking-wide">
+            Select Pass
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center px-6 pb-5 pt-2 text-black mt-auto border-t-0">
+        <div class="barcode w-20"></div>
+        <span class="text-[9px] italic font-bold">Pestaria '26</span>
+      </div>
+    </div>
+
+    <!-- PREMIUM PASS -->
+    <div class="relative bg-brand-navy border-4 border-black shadow-[6px_6px_0_0_#000] flex flex-col h-full transform md:-translate-y-6">
+      <span class="absolute -top-3 right-4 bg-brand-red text-cream text-[10px] font-bold uppercase px-3 py-1 border-2 border-black z-10">Popular</span>
+      
+      <div class="p-6 pb-5">
+        <div class="flex justify-between items-start text-[10px] font-bold uppercase tracking-wide text-brand-yellow">
+          <span>No. PR-002</span>
+        </div>
+        <h2 class="font-display font-black text-3xl uppercase mt-2 text-cream">Premium Pass</h2>
+        <p class="font-display font-black text-xl mt-1 text-brand-yellow">Rp 1.500.000</p>
+      </div>
+
+      <div class="border-t-2 border-dashed border-cream/40 relative">
+        <div class="absolute w-6 h-6 bg-cream border-4 border-black rounded-full -top-[11px] -left-[14px]"></div>
+        <div class="absolute w-6 h-6 bg-cream border-4 border-black rounded-full -top-[11px] -right-[14px]"></div>
+      </div>
+
+      <div class="p-6 text-cream flex flex-col flex-grow">
+        <p class="text-[10px] font-bold uppercase tracking-wide mb-3 text-brand-yellow">Benefits Included:</p>
+        <ul class="text-xs space-y-2 mb-8 font-medium">
+          <li class="flex gap-2 items-start"><span class="text-brand-yellow">★</span><span>Premium viewing area</span></li>
+          <li class="flex gap-2 items-start"><span class="text-brand-yellow">★</span><span>Faster festival entry</span></li>
+          <li class="flex gap-2 items-start"><span class="text-brand-yellow">★</span><span>Exclusive gig poster</span></li>
+          <li class="flex gap-2 items-start"><span class="text-brand-yellow">★</span><span>Limited-edition wristband</span></li>
+          <li class="flex gap-2 items-start"><span class="text-brand-yellow">★</span><span>Digital photo pack</span></li>
+        </ul>
+
+        <div class="mt-auto">
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[10px] font-bold uppercase tracking-wide text-brand-yellow">Quantity</p>
+            <div class="flex items-center border-2 border-brand-yellow bg-brand-navy text-brand-yellow">
+              <button onclick="changeQty('premium', -1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-brand-yellow hover:text-brand-navy transition">-</button>
+              <span id="qty-premium" class="w-10 h-8 flex items-center justify-center font-bold text-sm border-x-2 border-brand-yellow">1</span>
+              <button onclick="changeQty('premium', 1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-brand-yellow hover:text-brand-navy transition">+</button>
+            </div>
+          </div>
+          <button onclick="selectPass('Premium Pass', 1500000)" class="w-full bg-brand-yellow text-black font-display font-black uppercase py-3 border-2 border-black hover:bg-cream transition text-sm tracking-wide">
+            Select Pass
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center px-6 pb-5 pt-2 mt-auto">
+        <div class="barcode w-20 text-brand-yellow"></div>
+        <span class="text-[9px] italic font-bold text-brand-yellow">Pestaria '26</span>
+      </div>
+    </div>
+
+    <!-- ICON VIP -->
+    <div class="relative bg-black border-4 border-brand-red shadow-[6px_6px_0_0_#000] flex flex-col h-full">
+      <div class="p-6 pb-5">
+        <div class="flex justify-between items-start text-[10px] font-bold uppercase tracking-wide text-brand-yellow">
+          <span>No. PR-003</span>
+          <span class="text-brand-red">★ Ultimate Access</span>
+        </div>
+        <h2 class="font-display font-black text-3xl uppercase mt-2 text-brand-yellow">Icon VIP</h2>
+        <p class="font-display font-black text-xl mt-1 text-cream">Rp 2.500.000</p>
+      </div>
+
+      <div class="border-t-2 border-dashed border-brand-yellow/30 relative">
+        <div class="absolute w-6 h-6 bg-cream border-4 border-brand-red rounded-full -top-[11px] -left-[14px]"></div>
+        <div class="absolute w-6 h-6 bg-cream border-4 border-brand-red rounded-full -top-[11px] -right-[14px]"></div>
+      </div>
+
+      <div class="p-6 text-cream flex flex-col flex-grow">
+        <p class="text-[10px] font-bold uppercase tracking-wide mb-3 text-brand-yellow">VIP Privileges:</p>
+        <ul class="text-xs space-y-2 mb-8 font-medium">
+          <li class="flex gap-2 items-start"><span>★</span><span>VIP front-stage area access</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>Signed limited-edition poster</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>Backstage exclusive lounge</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>VIP premium collectible token</span></li>
+          <li class="flex gap-2 items-start"><span>★</span><span>VIP custom gate entrance</span></li>
+        </ul>
+
+        <div class="mt-auto">
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[10px] font-bold uppercase tracking-wide text-brand-yellow">Quantity</p>
+            <div class="flex items-center border-2 border-brand-yellow bg-black text-brand-yellow">
+              <button onclick="changeQty('vip', -1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-brand-yellow hover:text-black transition">-</button>
+              <span id="qty-vip" class="w-10 h-8 flex items-center justify-center font-bold text-sm border-x-2 border-brand-yellow">1</span>
+              <button onclick="changeQty('vip', 1)" class="w-8 h-8 flex items-center justify-center font-black text-lg hover:bg-brand-yellow hover:text-black transition">+</button>
+            </div>
+          </div>
+          <button onclick="selectPass('Icon VIP', 2500000)" class="w-full bg-brand-red text-cream font-display font-black uppercase py-3 border-2 border-brand-red hover:bg-brand-yellow hover:text-black transition text-sm tracking-wide">
+            Select VIP Pass
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center px-6 pb-5 pt-2 mt-auto">
+        <div class="barcode w-20 text-brand-red"></div>
+        <span class="text-[9px] italic font-bold text-brand-red">Pestaria '26</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT'S INCLUDED -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 pt-24 pb-8 text-center">
+    <h2 class="font-display font-black text-3xl sm:text-4xl uppercase text-black">What's Included?</h2>
+    <p class="font-script italic text-brand-navy text-lg mt-2">Compare tier features side-by-side</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 pb-32 overflow-x-auto">
+    <table class="w-full min-w-[700px] border-4 border-black text-xs sm:text-sm font-medium">
+      <thead>
+        <tr class="bg-black text-cream uppercase text-[10px] sm:text-xs tracking-wide">
+          <th class="text-left font-bold px-6 py-4">Pass Privilege</th>
+          <th class="text-center font-bold px-4 py-4">General</th>
+          <th class="text-center font-bold px-4 py-4 text-brand-yellow">Premium</th>
+          <th class="text-center font-bold px-4 py-4 text-brand-red">Icon VIP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t border-black/20 bg-cream">
+          <td class="px-6 py-4 font-bold">Concert Area Access</td>
+          <td class="px-4 py-4 text-center text-xs">★ Main Area</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-navy font-bold">★ Premium</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Front Stage</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-white">
+          <td class="px-6 py-4 font-bold">Official Digital Ticket</td>
+          <td class="px-4 py-4 text-center text-base">✓</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-navy font-bold">★ Exclusive</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Printed Commemorative</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-cream">
+          <td class="px-6 py-4 font-bold">Merch Booth Access</td>
+          <td class="px-4 py-4 text-center text-base">✓</td>
+          <td class="px-4 py-4 text-center text-base">✓</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ VIP Lanes</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-white">
+          <td class="px-6 py-4 font-bold">Festival Wristband</td>
+          <td class="px-4 py-4 text-center text-xs">Standard</td>
+          <td class="px-4 py-4 text-center text-xs">Premium Ribbon</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Light-up RFID Tag</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-cream">
+          <td class="px-6 py-4 font-bold">Gate Entry Access</td>
+          <td class="px-4 py-4 text-center text-xs">Standard Gate</td>
+          <td class="px-4 py-4 text-center text-xs">Fast-track Lanes</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Private VIP Gate</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-white">
+          <td class="px-6 py-4 font-bold">Exclusive Tour Poster</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center text-xs">Standard Print</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Signed & Numbered</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-cream">
+          <td class="px-6 py-4 font-bold">Digital Photo Pack</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center text-base">✓</td>
+          <td class="px-4 py-4 text-center text-base">✓</td>
+        </tr>
+        <tr class="border-t border-black/20 bg-white">
+          <td class="px-6 py-4 font-bold">Backstage VIP Lounge</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Full Access</td>
+        </tr>
+        <tr class="border-t border-b border-black/20 bg-cream">
+          <td class="px-6 py-4 font-bold">Priority Parking Spot</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center">—</td>
+          <td class="px-4 py-4 text-center text-xs text-brand-red font-bold">★ Included</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STICKY CHECKOUT BAR -->
+  <div class="fixed bottom-0 left-0 right-0 bg-brand-red border-t-4 border-black z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="text-brand-yellow text-xs sm:text-sm">
+        <p class="uppercase font-bold tracking-wide text-[10px]">Selected Passes</p>
+        <p id="selection-summary" class="font-display font-black text-sm sm:text-base">1 Premium Pass &bull; Rp 1.500.000</p>
+      </div>
+      <a href="checkout.html" id="checkout-btn" class="bg-brand-yellow text-black font-display font-black uppercase px-8 py-3 border-2 border-black hover:bg-cream transition text-sm tracking-wide whitespace-nowrap">
+        Continue to Checkout &rarr;
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const qtyState = { general: 1, premium: 1, vip: 1 };
+    let selected = { name: 'Premium Pass', price: 1500000 };
+
+    function changeQty(tier, delta) {
+      const newVal = qtyState[tier] + delta;
+      if (newVal < 1 || newVal > 10) return;
+      qtyState[tier] = newVal;
+      document.getElementById('qty-' + tier).textContent = newVal;
+      if (
+        (tier === 'general' && selected.name === 'General Pass') ||
+        (tier === 'premium' && selected.name === 'Premium Pass') ||
+        (tier === 'vip' && selected.name === 'Icon VIP')
+      ) {
+        updateSummary(newVal);
+      }
+    }
+
+    function selectPass(name, unitPrice) {
+      const tierKey = name === 'General Pass' ? 'general' : name === 'Premium Pass' ? 'premium' : 'vip';
+      const qty = qtyState[tierKey];
+      selected = { name, price: unitPrice, qty };
+      updateSummary(qty);
+    }
+
+    function updateSummary(qty) {
+      const total = selected.price * qty;
+      const formatted = 'Rp ' + total.toLocaleString('id-ID').replace(/,/g, '.');
+      document.getElementById('selection-summary').textContent =
+        qty + ' ' + selected.name + (qty > 1 ? '(s)' : '') + ' \u2022 ' + formatted;
+    }
+  </script>
+
+</body>
+</html>

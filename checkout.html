@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout — PESTARIA '26</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mengimpor Google Fonts yang konsisten dengan halaman lain -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Space Grotesk', sans-serif; background-color: #F3EEE3; }
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .font-serif-italic { font-family: 'DM Serif Display', serif; }
+
+  /* Animasi Marquee untuk Bar Atas */
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 18s linear infinite;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Dashed zigzag separator between the ticket halves */
+  .ticket-tear {
+    position: relative;
+    border-top: 3px dashed #111111;
+  }
+  .ticket-tear::before,
+  .ticket-tear::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    width: 26px;
+    height: 26px;
+    background: #F3EEE3;
+    border: 3px solid #111111;
+    border-radius: 9999px;
+  }
+  .ticket-tear::before { left: -16px; }
+  .ticket-tear::after { right: -16px; }
+
+  /* Barcode */
+  .barcode-bar {
+    background-image: repeating-linear-gradient(
+      90deg,
+      #111 0px, #111 2px,
+      transparent 2px, transparent 4px,
+      #111 4px, #111 5px,
+      transparent 5px, transparent 9px,
+      #111 9px, #111 12px,
+      transparent 12px, transparent 14px
+    );
+  }
+
+  /* Hard drop-shadow "brutalist" box */
+  .brutal-shadow {
+    box-shadow: 8px 8px 0px 0px #111111;
+  }
+  .brutal-shadow-sm {
+    box-shadow: 4px 4px 0px 0px #111111;
+  }
+</style>
+</head>
+<body class="min-h-screen text-[#111111]">
+
+  <!-- Top bar (Marquee Bergerak) -->
+  <header class="bg-[#D8332A] text-white border-b-4 border-black overflow-hidden whitespace-nowrap relative z-20">
+    <div class="marquee-track py-2.5 text-xs sm:text-sm font-extrabold tracking-widest uppercase flex items-center">
+      <span class="mx-6">★ CHECKOUT</span>
+      <span class="mx-6 font-serif-italic lowercase text-base text-[#F4C430] tracking-normal">Pestaria '26</span>
+      <span class="mx-6">★ SECURE PAYMENT</span>
+      <span class="mx-6">★ HOLDING SEAT</span>
+      <!-- Duplikat untuk seamless loop -->
+      <span class="mx-6">★ CHECKOUT</span>
+      <span class="mx-6 font-serif-italic lowercase text-base text-[#F4C430] tracking-normal">Pestaria '26</span>
+      <span class="mx-6">★ SECURE PAYMENT</span>
+      <span class="mx-6">★ HOLDING SEAT</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+    <!-- Hero -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="inline-block bg-[#F4C430] border-2 border-black px-3 py-1 text-xs font-extrabold tracking-widest mb-6 -rotate-1 brutal-shadow-sm uppercase">
+        HOLDING SEAT FOR 09:59
+      </span>
+      <h1 class="font-display font-black text-5xl sm:text-7xl text-[#1B2A6B] leading-none tracking-tight uppercase">
+        ALMOST YOURS.
+      </h1>
+      <p class="font-serif-italic text-[#D8332A] text-lg sm:text-xl mt-4">
+        Complete your details to seal the monumental night.
+      </p>
+    </div>
+
+    <!-- Two column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+
+      <!-- LEFT: Order summary ticket -->
+      <div>
+        <div class="border-4 border-black bg-white brutal-shadow max-w-md mx-auto lg:mx-0">
+
+          <!-- Yellow header -->
+          <div class="bg-[#F4C430] border-b-4 border-black px-6 py-5">
+            <div class="flex items-start justify-between">
+              <span class="text-xs font-extrabold tracking-widest text-[#D8332A]">RECEIPT NO. PR-2026-88</span>
+              <span class="text-xs font-extrabold tracking-widest text-black/70">ORDER SUMMARY</span>
+            </div>
+            <h2 class="font-display font-black text-2xl sm:text-3xl mt-2 uppercase">PREMIUM PASS</h2>
+            <p class="font-display font-bold text-[#1B2A6B] text-sm sm:text-base">NO. PR-002</p>
+          </div>
+
+          <!-- Ticket tear separator -->
+          <div class="relative mx-6">
+            <div class="ticket-tear"></div>
+          </div>
+
+          <!-- Details -->
+          <div class="px-6 pt-8 pb-6">
+            <dl class="space-y-3 text-sm font-medium">
+              <div class="flex justify-between">
+                <dt class="text-black/60 tracking-wide">TICKET TYPE</dt>
+                <dd class="font-bold">PREMIUM ADMISSION</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-black/60 tracking-wide">QUANTITY</dt>
+                <dd class="font-bold">1x</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-black/60 tracking-wide">BASE PRICE</dt>
+                <dd class="font-bold">Rp 1.500.000</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-black/60 tracking-wide">ADMIN &amp; TAX FEES</dt>
+                <dd class="font-bold">INCLUDED</dd>
+              </div>
+            </dl>
+
+            <div class="border-t-2 border-dashed border-black my-5"></div>
+
+            <div class="flex items-center justify-between">
+              <span class="font-bold tracking-wide text-sm">TOTAL PAYMENT</span>
+              <span class="font-display font-black text-2xl sm:text-3xl text-[#D8332A]">Rp 1.500.000</span>
+            </div>
+
+            <!-- Barcode -->
+            <div class="mt-6 flex items-end justify-between">
+              <div class="barcode-bar h-10 w-40 sm:w-48"></div>
+              <span class="font-serif-italic text-sm text-black/70">Pesta Ria '26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Return button -->
+        <a href="ticket.html"
+           class="inline-block mt-6 border-2 border-black bg-white px-5 py-3 text-xs font-extrabold tracking-widest brutal-shadow-sm hover:bg-[#F3EEE3] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all uppercase">
+          ← RETURN TO PASS SELECTION
+        </a>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <form id="checkout-form" class="space-y-8">
+
+          <!-- Your details -->
+          <div>
+            <h3 class="flex items-center gap-2 font-display font-black text-lg tracking-wide mb-4 uppercase">
+              <span class="h-3 w-3 bg-[#D8332A] inline-block border border-black"></span>
+              YOUR DETAILS
+            </h3>
+
+            <div class="space-y-4">
+              <div>
+                <label for="fullname" class="block text-xs font-extrabold tracking-widest text-black/70 mb-1">FULL NAME</label>
+                <input id="fullname" type="text" placeholder="e.g. Fulan bin Fulan"
+                  class="w-full border-2 border-black px-4 py-3 bg-white placeholder-black/40 focus:outline-none focus:ring-2 focus:ring-[#1B2A6B]" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-extrabold tracking-widest text-black/70 mb-1">EMAIL ADDRESS</label>
+                <input id="email" type="email" placeholder="e.g. fulan@soundstudios.com"
+                  class="w-full border-2 border-black px-4 py-3 bg-white placeholder-black/40 focus:outline-none focus:ring-2 focus:ring-[#1B2A6B]" />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-extrabold tracking-widest text-black/70 mb-1">PHONE NUMBER</label>
+                <input id="phone" type="tel" placeholder="e.g. +62 867-6767-6767"
+                  class="w-full border-2 border-black px-4 py-3 bg-white placeholder-black/40 focus:outline-none focus:ring-2 focus:ring-[#1B2A6B]" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment method -->
+          <div>
+            <h3 class="flex items-center gap-2 font-display font-black text-lg tracking-wide mb-4 uppercase">
+              <span class="h-3 w-3 bg-[#1B2A6B] inline-block border border-black"></span>
+              PAYMENT METHOD
+            </h3>
+
+            <div class="grid grid-cols-3 gap-3">
+
+              <!-- Bank Transfer -->
+              <label class="relative cursor-pointer">
+                <input type="radio" name="payment" value="bank" class="peer sr-only" checked />
+                <div class="border-2 border-black px-3 py-3 h-full flex flex-col justify-between bg-white
+                            peer-checked:border-[3px] peer-checked:border-[#1B2A6B] peer-checked:bg-[#EEF1FB]
+                            peer-checked:brutal-shadow-sm transition-all">
+                  <div class="flex items-start justify-between mb-2">
+                    <span class="text-[10px] font-extrabold tracking-widest text-black/50">POPULAR</span>
+                    <span class="h-4 w-4 rounded-full border-2 border-black flex items-center justify-center">
+                      <span class="h-2 w-2 rounded-full bg-[#1B2A6B] hidden peer-checked-dot"></span>
+                    </span>
+                  </div>
+                  <p class="font-display font-black text-xs sm:text-sm leading-tight">BANK TRANSFER</p>
+                  <p class="text-[10px] text-black/50 mt-1">Manual or Auto verification</p>
+                </div>
+              </label>
+
+              <!-- E-Wallet / QRIS -->
+              <label class="relative cursor-pointer">
+                <input type="radio" name="payment" value="ewallet" class="peer sr-only" />
+                <div class="border-2 border-black px-3 py-3 h-full flex flex-col justify-between bg-white
+                            peer-checked:border-[3px] peer-checked:border-[#1B2A6B] peer-checked:bg-[#EEF1FB]
+                            peer-checked:brutal-shadow-sm transition-all">
+                  <div class="flex items-start justify-between mb-2">
+                    <span class="text-[10px] font-extrabold tracking-widest text-black/50">INSTANT</span>
+                    <span class="h-4 w-4 rounded-full border-2 border-black flex items-center justify-center">
+                      <span class="h-2 w-2 rounded-full bg-[#1B2A6B] hidden peer-checked-dot"></span>
+                    </span>
+                  </div>
+                  <p class="font-display font-black text-xs sm:text-sm leading-tight">E-WALLET / QRIS</p>
+                  <p class="text-[10px] text-black/50 mt-1">QR scan popup</p>
+                </div>
+              </label>
+
+              <!-- Credit Card -->
+              <label class="relative cursor-pointer">
+                <input type="radio" name="payment" value="card" class="peer sr-only" />
+                <div class="border-2 border-black px-3 py-3 h-full flex flex-col justify-between bg-white
+                            peer-checked:border-[3px] peer-checked:border-[#1B2A6B] peer-checked:bg-[#EEF1FB]
+                            peer-checked:brutal-shadow-sm transition-all">
+                  <div class="flex items-start justify-between mb-2">
+                    <span class="text-[10px] font-extrabold tracking-widest text-black/50">SECURE</span>
+                    <span class="h-4 w-4 rounded-full border-2 border-black flex items-center justify-center">
+                      <span class="h-2 w-2 rounded-full bg-[#1B2A6B] hidden peer-checked-dot"></span>
+                    </span>
+                  </div>
+                  <p class="font-display font-black text-xs sm:text-sm leading-tight">CREDIT CARD</p>
+                  <p class="text-[10px] text-black/50 mt-1">Visa, Mastercard, JCB</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <button type="submit"
+            class="w-full bg-[#D8332A] border-2 border-black text-white font-display font-black text-lg sm:text-xl py-4 sm:py-5 brutal-shadow
+                   hover:bg-[#c22c24] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all uppercase">
+            PAY NOW — Rp 1.500.000 →
+          </button>
+
+          <p class="flex items-center justify-center gap-1 text-[11px] text-black/50 text-center font-medium">
+            🔒 Encrypted secure transmission. No data is stored inside local caches.
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Toggle the visible dot inside each payment method's radio circle
+    const radios = document.querySelectorAll('input[name="payment"]');
+    function refreshDots() {
+      radios.forEach((radio) => {
+        const dot = radio.closest('label').querySelector('.peer-checked-dot');
+        if (radio.checked) {
+          dot.classList.remove('hidden');
+        } else {
+          dot.classList.add('hidden');
+        }
+      });
+    }
+    radios.forEach((radio) => radio.addEventListener('change', refreshDots));
+    refreshDots();
+
+    // Prevent actual submission for this demo checkout
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Payment flow would be triggered here.');
+    });
+  </script>
+
+</body>
+</html>
