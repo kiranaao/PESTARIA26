@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PESTARIA — Official Merchandise Outlet</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mengimpor font yang sama persis dengan desain -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700;800&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Space Grotesk', sans-serif; background:#FDFBF7; }
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .font-serif-italic { font-family: 'DM Serif Display', serif; }
+  
+  .shadow-brutal { box-shadow: 8px 8px 0px 0px #000000; }
+  .shadow-brutal-sm { box-shadow: 4px 4px 0px 0px #000000; }
+  
+  /* Animasi Marquee untuk Bar Atas */
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+</style>
+</head>
+<body class="text-black flex flex-col min-h-screen">
+
+  <!-- TOP BAR (Marquee Bergerak) -->
+  <div class="w-full bg-[#DE3226] text-white overflow-hidden whitespace-nowrap border-b-4 border-black relative z-20">
+    <div class="marquee-track py-2 text-xs sm:text-sm font-extrabold tracking-widest uppercase">
+      <span class="mx-6">★ OFFICIAL MERCHANDISE OUTLET</span>
+      <span class="mx-6 text-yellow-400">★ REPRINT ALERT</span>
+      <span class="mx-6">★ COLLECTIBLES SELLING FAST</span>
+      <span class="mx-6 text-yellow-400 font-serif-italic normal-case tracking-normal text-base">Pestaria '26</span>
+      <!-- Duplikat untuk loop mulus -->
+      <span class="mx-6">★ OFFICIAL MERCHANDISE OUTLET</span>
+      <span class="mx-6 text-yellow-400">★ REPRINT ALERT</span>
+      <span class="mx-6">★ COLLECTIBLES SELLING FAST</span>
+      <span class="mx-6 text-yellow-400 font-serif-italic normal-case tracking-normal text-base">Pestaria '26</span>
+    </div>
+  </div>
+
+  <main class="flex-1 w-full">
+
+    <!-- Hero -->
+    <section class="text-center px-4 pt-14 pb-12 max-w-4xl mx-auto">
+      <div class="flex items-center justify-center gap-3 mb-6 flex-wrap">
+        <span class="bg-[#DE3226] text-white border-2 border-black px-3 py-1 text-xs font-extrabold tracking-widest shadow-brutal-sm -rotate-2 uppercase">OFFICIAL DROP</span>
+        <span class="bg-yellow-400 text-black border-2 border-black px-3 py-1 text-xs font-extrabold tracking-widest shadow-brutal-sm rotate-1 uppercase">Limited Run Items</span>
+      </div>
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-[#1B2A6B] mb-4 uppercase tracking-tight">TAKE THE FEVER HOME</h1>
+      <p class="font-serif-italic italic text-lg md:text-2xl text-[#DE3226]">Mind-bending physical relics of a monumental hybrid spectacle.</p>
+    </section>
+
+    <!-- Product Grid (Flex Wrap Justify Center agar baris ke-2 di tengah) -->
+    <section class="max-w-6xl mx-auto px-4 z-10 relative">
+      <div class="flex flex-wrap justify-center gap-8">
+
+        <!-- Keychain + Cap -->
+        <article class="product-card w-full max-w-[320px] bg-white border-4 border-black shadow-brutal flex flex-col"
+          data-name="Keychain + Cap" data-price="38000">
+          <div class="relative border-b-4 border-black bg-[#FDFBF7] aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <span class="absolute bottom-3 left-3 bg-yellow-400 border-2 border-black px-3 py-1 text-sm font-display shadow-brutal-sm z-10">Rp 38.000</span>
+            <img src="topiganci.jpg" alt="Keychain and Cap" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-display text-xl leading-tight uppercase">KEYCHAIN + CAP</h3>
+            <p class="font-serif-italic italic text-sm text-[#1B2A6B] mb-4">Official Superstar Collectible</p>
+            <ul class="text-xs space-y-2 mb-5 text-black font-semibold tracking-wide">
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Collectible custom soft acrylic tag</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Premium adjustable cotton cap</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Exclusive commemorative art card packing</li>
+            </ul>
+            <div class="border-t-2 border-dashed border-black/30 my-4"></div>
+            <div class="mt-auto flex items-center gap-3">
+              <div class="flex items-center border-2 border-black shadow-brutal-sm bg-white">
+                <button class="qty-minus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">−</button>
+                <input type="number" value="1" min="1" class="qty-input w-10 h-9 text-center border-x-2 border-black outline-none font-bold text-sm bg-white" readonly>
+                <button class="qty-plus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">+</button>
+              </div>
+              <button class="preorder-btn flex-1 h-10 bg-[#DE3226] text-white font-display text-xs border-2 border-black shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all uppercase tracking-wider">PRE-ORDER</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mug / Cup -->
+        <article class="product-card w-full max-w-[320px] bg-white border-4 border-black shadow-brutal flex flex-col"
+          data-name="Mug / Cup" data-price="30000">
+          <div class="relative border-b-4 border-black bg-[#FDFBF7] aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <span class="absolute bottom-3 left-3 bg-yellow-400 border-2 border-black px-3 py-1 text-sm font-display shadow-brutal-sm z-10">Rp 30.000</span>
+            <img src="mug.jpg" alt="Mug" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-display text-xl leading-tight uppercase">MUG / CUP</h3>
+            <p class="font-serif-italic italic text-sm text-[#1B2A6B] mb-4">Official Superstar Collectible</p>
+            <ul class="text-xs space-y-2 mb-5 text-black font-semibold tracking-wide">
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Official superstar stamp design</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>High quality heavyweight ceramic</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Dishwasher safe limited-edition print</li>
+            </ul>
+            <div class="border-t-2 border-dashed border-black/30 my-4"></div>
+            <div class="mt-auto flex items-center gap-3">
+              <div class="flex items-center border-2 border-black shadow-brutal-sm bg-white">
+                <button class="qty-minus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">−</button>
+                <input type="number" value="1" min="1" class="qty-input w-10 h-9 text-center border-x-2 border-black outline-none font-bold text-sm bg-white" readonly>
+                <button class="qty-plus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">+</button>
+              </div>
+              <button class="preorder-btn flex-1 h-10 bg-[#DE3226] text-white font-display text-xs border-2 border-black shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all uppercase tracking-wider">PRE-ORDER</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Official T-Shirt -->
+        <article class="product-card w-full max-w-[320px] bg-white border-4 border-black shadow-brutal flex flex-col"
+          data-name="Official T-Shirt" data-price="112000">
+          <div class="relative border-b-4 border-black bg-[#FDFBF7] aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <span class="absolute bottom-3 left-3 bg-yellow-400 border-2 border-black px-3 py-1 text-sm font-display shadow-brutal-sm z-10">Rp 112.000</span>
+            <img src="tshirt.jpg" alt="T-Shirt" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-display text-xl leading-tight uppercase">OFFICIAL T-SHIRT</h3>
+            <p class="font-serif-italic italic text-sm text-[#1B2A6B] mb-4">Official Superstar Collectible</p>
+            <ul class="text-xs space-y-2 mb-5 text-black font-semibold tracking-wide">
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>240gsm ultra-heavy premium cotton</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Collector Pesta Ria vintage poster graphic</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Authentic holographic tag label</li>
+            </ul>
+            <div class="border-t-2 border-dashed border-black/30 my-4"></div>
+            <div class="mt-auto flex items-center gap-3">
+              <div class="flex items-center border-2 border-black shadow-brutal-sm bg-white">
+                <button class="qty-minus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">−</button>
+                <input type="number" value="1" min="1" class="qty-input w-10 h-9 text-center border-x-2 border-black outline-none font-bold text-sm bg-white" readonly>
+                <button class="qty-plus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">+</button>
+              </div>
+              <button class="preorder-btn flex-1 h-10 bg-[#DE3226] text-white font-display text-xs border-2 border-black shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all uppercase tracking-wider">PRE-ORDER</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Official Scarf -->
+        <article class="product-card w-full max-w-[320px] bg-white border-4 border-black shadow-brutal flex flex-col"
+          data-name="Official Scarf" data-price="120000">
+          <div class="relative border-b-4 border-black bg-[#FDFBF7] aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <span class="absolute bottom-3 left-3 bg-yellow-400 border-2 border-black px-3 py-1 text-sm font-display shadow-brutal-sm z-10">Rp 120.000</span>
+            <img src="scarf.jpg" alt="Scarf" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-display text-xl leading-tight uppercase">OFFICIAL SCARF</h3>
+            <p class="font-serif-italic italic text-sm text-[#1B2A6B] mb-4">Official Superstar Collectible</p>
+            <ul class="text-xs space-y-2 mb-5 text-black font-semibold tracking-wide">
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Traditional Jacquard weave design</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Premium acrylic soft knit</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Double-sided contrast design</li>
+            </ul>
+            <div class="border-t-2 border-dashed border-black/30 my-4"></div>
+            <div class="mt-auto flex items-center gap-3">
+              <div class="flex items-center border-2 border-black shadow-brutal-sm bg-white">
+                <button class="qty-minus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">−</button>
+                <input type="number" value="1" min="1" class="qty-input w-10 h-9 text-center border-x-2 border-black outline-none font-bold text-sm bg-white" readonly>
+                <button class="qty-plus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">+</button>
+              </div>
+              <button class="preorder-btn flex-1 h-10 bg-[#DE3226] text-white font-display text-xs border-2 border-black shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all uppercase tracking-wider">PRE-ORDER</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Canvas Tote Bag -->
+        <article class="product-card w-full max-w-[320px] bg-white border-4 border-black shadow-brutal flex flex-col"
+          data-name="Canvas Tote Bag" data-price="85000">
+          <div class="relative border-b-4 border-black bg-[#FDFBF7] aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <span class="absolute bottom-3 left-3 bg-yellow-400 border-2 border-black px-3 py-1 text-sm font-display shadow-brutal-sm z-10">Rp 85.000</span>
+            <img src="totebag.jpg" alt="Tote Bag" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-display text-xl leading-tight uppercase">CANVAS TOTE BAG</h3>
+            <p class="font-serif-italic italic text-sm text-[#1B2A6B] mb-4">Official Superstar Collectible</p>
+            <ul class="text-xs space-y-2 mb-5 text-black font-semibold tracking-wide">
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Durable 12oz raw organic canvas</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Spacious layout with interior zip pocket</li>
+              <li class="flex gap-2 items-start"><span class="text-[#DE3226] text-sm leading-none">☆</span>Dual-color screen-printed poster artwork</li>
+            </ul>
+            <div class="border-t-2 border-dashed border-black/30 my-4"></div>
+            <div class="mt-auto flex items-center gap-3">
+              <div class="flex items-center border-2 border-black shadow-brutal-sm bg-white">
+                <button class="qty-minus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">−</button>
+                <input type="number" value="1" min="1" class="qty-input w-10 h-9 text-center border-x-2 border-black outline-none font-bold text-sm bg-white" readonly>
+                <button class="qty-plus w-9 h-9 font-display text-lg leading-none hover:bg-gray-100 transition-colors">+</button>
+              </div>
+              <button class="preorder-btn flex-1 h-10 bg-[#DE3226] text-white font-display text-xs border-2 border-black shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all uppercase tracking-wider">PRE-ORDER</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Official Souvenirs Banner -->
+    <section class="mt-20 bg-[#1B2A6B] text-[#FDFBF7] border-t-4 border-black pt-16 pb-32 px-4 text-center">
+      <span class="inline-block bg-yellow-400 text-black border-2 border-black px-3 py-1 text-xs font-extrabold tracking-widest shadow-brutal-sm mb-6 uppercase">QUALITY GUARANTEED</span>
+      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl flex items-center justify-center gap-4 flex-wrap uppercase tracking-wide">
+        <span class="text-white">★</span> OFFICIAL SOUVENIRS <span class="text-white">★</span>
+      </h2>
+      <p class="font-serif-italic italic mt-5 text-xl md:text-2xl text-yellow-400 max-w-2xl mx-auto">"Limited pieces. Made for the ones who were there."</p>
+      <p class="max-w-2xl mx-auto mt-6 text-sm md:text-base text-[#FDFBF7]/80 leading-relaxed font-medium">
+        Every item is stamped with the official Pestaria 26 hologram seal. We weave pop legacy directly into cotton threads and ceramic molds. Once sold out, these designs return permanently to the archive vault.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Fixed Bottom Checkout Bar -->
+  <div class="fixed bottom-0 left-0 right-0 bg-yellow-400 border-t-4 border-black z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3">
+      <div class="flex flex-col">
+        <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-black/70 mb-0.5">Your Collectibles Cart</span>
+        <span class="font-display text-sm sm:text-lg leading-none text-[#DE3226]">
+          <span id="cart-count">0</span> ITEMS <span class="text-black mx-1">•</span> Rp <span id="cart-total">0</span>
+        </span>
+      </div>
+      <a href="checkout.html" id="checkout-btn" class="bg-[#DE3226] text-white font-display text-xs sm:text-sm border-2 border-black px-5 sm:px-8 py-3 shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all whitespace-nowrap uppercase tracking-wider">
+        CONTINUE PAYMENT →
+      </a>
+    </div>
+  </div>
+
+<script>
+  const cards = document.querySelectorAll('.product-card');
+  let cart = {}; 
+
+  function formatRp(n) {
+    return n.toLocaleString('id-ID').replace(/,/g, '.');
+  }
+
+  function updateBar() {
+    let items = 0, total = 0;
+    Object.values(cart).forEach(c => { items += c.qty; total += c.qty * c.price; });
+    document.getElementById('cart-count').textContent = items;
+    document.getElementById('cart-total').textContent = formatRp(total);
+  }
+
+  cards.forEach(card => {
+    const name = card.dataset.name;
+    const price = parseInt(card.dataset.price, 10);
+    const input = card.querySelector('.qty-input');
+    const minus = card.querySelector('.qty-minus');
+    const plus = card.querySelector('.qty-plus');
+    const preorderBtn = card.querySelector('.preorder-btn');
+
+    plus.addEventListener('click', () => {
+      input.value = parseInt(input.value, 10) + 1;
+    });
+    minus.addEventListener('click', () => {
+      const v = parseInt(input.value, 10);
+      if (v > 1) input.value = v - 1;
+    });
+
+    preorderBtn.addEventListener('click', () => {
+      const qty = parseInt(input.value, 10);
+      cart[name] = { qty, price };
+      updateBar();
+
+      const original = preorderBtn.textContent;
+      preorderBtn.textContent = 'ADDED ✓';
+      preorderBtn.classList.add('bg-green-600');
+      setTimeout(() => {
+        preorderBtn.textContent = original;
+        preorderBtn.classList.remove('bg-green-600');
+      }, 900);
+    });
+  });
+</script>
+
+</body>
+</html>
